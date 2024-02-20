@@ -12,9 +12,9 @@ void swap(int *array, size_t size, int *x, int *y)
 {
 	if (*x != *y)
 	{
-		*x = *x + *y;
-		*y = *x - *y;
-		*x = *x - *y;
+		*x ^= *y;
+		*y ^= *x;
+		*x ^= *y;
 		print_array((const int *)array, size);
 	}
 }
@@ -40,7 +40,6 @@ int partition(int *array, size_t size, int lb, int ub)
 	{
 		while (array[i] <= pivot)
 			i++;
-
 		while (array[j] > pivot)
 			j--;
 
