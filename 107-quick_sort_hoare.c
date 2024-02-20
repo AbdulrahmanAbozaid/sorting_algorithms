@@ -77,8 +77,8 @@ void quickSort(int *array, size_t size, int lb, int ub)
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	if (!array ||!size)
+	if (!array || !size)
 		return;
-	
+
 	quickSort(array, size, 0, size - 1);
 }
