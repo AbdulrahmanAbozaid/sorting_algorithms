@@ -32,7 +32,7 @@ void swap(int *array, size_t size, int *x, int *y)
 */
 int partition(int *array, size_t size, int lb, int ub)
 {
-	int pivot = array[lb];
+	int pivot = array[ub];
 	int i, j;
 
 	i = lb;
@@ -65,8 +65,8 @@ void quickSort(int *array, size_t size, int lb, int ub)
 	{
 		size_t loc = partition(array, size, lb, ub);
 
-		quickSort(array, size, lb, loc);
-		quickSort(array, size, loc + 1, ub);
+		quickSort(array, size, lb, loc - 1);
+		quickSort(array, size, loc, ub);
 	}
 }
 
